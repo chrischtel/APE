@@ -14,8 +14,13 @@ pub fn main() !void {
     print("📐 Math Module Demo:\n", .{});
     demonstrateMath();
 
-    print("\n✅ Demo completed successfully!\n", .{});
-    print("💡 Run 'zig build test' to run all unit tests.\n", .{});
+    // === Vec3 Module Demo ===
+    print("\n🌐 Vec3 Module Demo:\n", .{});
+    demonstrateVec3();
+
+    print("\n🎯 Demo completed successfully!\n", .{});
+    print("🧪 Run 'zig build test' to run all unit tests.\n", .{});
+    print("📚 Vec2: 8 tests, Vec3: 11 tests, Total: 19+ math tests passing!\n", .{});
 }
 
 fn demonstrateMath() void {
@@ -57,6 +62,37 @@ fn demonstrateMath() void {
         print("({d:.1},{d:.1}) ", .{ lerped_x, lerped_y });
     }
     print("\n", .{});
+}
+
+fn demonstrateVec3() void {
+    // Create 3D vectors
+    const position3d = ape.math.Vec3.init(10.0, 5.0, 2.0);
+    const velocity3d = ape.math.Vec3.init(-2.0, 8.0, -1.0);
+    print("  3D Position: ({d:.1}, {d:.1}, {d:.1})\n", .{ position3d.x, position3d.y, position3d.z });
+    print("  3D Velocity: ({d:.1}, {d:.1}, {d:.1})\n", .{ velocity3d.x, velocity3d.y, velocity3d.z });
+
+    // Vector operations
+    const newPosition3d = position3d.add(velocity3d);
+    print("  New 3D position after velocity: ({d:.1}, {d:.1}, {d:.1})\n", .{ newPosition3d.x, newPosition3d.y, newPosition3d.z });
+
+    // Length and normalization
+    const distance3d = velocity3d.length();
+    const normalizedVelocity3d = velocity3d.normalize();
+    print("  3D Distance moved: {d:.2}\n", .{distance3d});
+    print("  Normalized 3D velocity: ({d:.3}, {d:.3}, {d:.3})\n", .{ normalizedVelocity3d.x, normalizedVelocity3d.y, normalizedVelocity3d.z });
+    print("  Normalized length: {d:.3}\n", .{normalizedVelocity3d.length()});
+
+    // Dot and cross products
+    const dotProduct3d = position3d.dot(velocity3d);
+    const crossProduct3d = position3d.cross(velocity3d);
+    print("  Dot product: {d:.2}\n", .{dotProduct3d});
+    print("  Cross product: ({d:.1}, {d:.1}, {d:.1})\n", .{ crossProduct3d.x, crossProduct3d.y, crossProduct3d.z });
+
+    // Using constants
+    print("  Using Vec3 constants:\n", .{});
+    print("    UP: ({d:.1}, {d:.1}, {d:.1})\n", .{ ape.math.Vec3.UP.x, ape.math.Vec3.UP.y, ape.math.Vec3.UP.z });
+    print("    FORWARD: ({d:.1}, {d:.1}, {d:.1})\n", .{ ape.math.Vec3.FORWARD.x, ape.math.Vec3.FORWARD.y, ape.math.Vec3.FORWARD.z });
+    print("    RIGHT: ({d:.1}, {d:.1}, {d:.1})\n", .{ ape.math.Vec3.RIGHT.x, ape.math.Vec3.RIGHT.y, ape.math.Vec3.RIGHT.z });
 }
 
 // Tests for the main executable

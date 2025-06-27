@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Modular project structure with re-exports
 - Working demo program showcasing Vec2 functionality
 - Comprehensive test suite for Vec2 operations
+- Basic Vec3 math operations (add, sub, mul, div, cross product, (more to come as needed))
 
 ### Changed
 - Nothing yet
