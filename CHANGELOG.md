@@ -7,10 +7,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Added
-- Vec2 math operations (add, sub, mul, div, normalize, dot, perp) - 
-- Vec3 math operations (add, sub, mul, div, cross, length, normalize, dot) - 
-- Vec2 and Vec3 constants (ZERO, ONE, UNIT_X/Y/Z, UP, DOWN, LEFT, RIGHT, FORWARD, BACK) -
-- Basic math utilities (lerp, clamp, approximately) -
+- Vec2 math operations (add, sub, mul, div, normalize, dot, perp)
+- Vec3 math operations (add, sub, mul, div, cross, length, normalize, dot)
+- Vec2 and Vec3 constants (ZERO, ONE, UNIT_X/Y/Z, UP, DOWN, LEFT, RIGHT, FORWARD, BACK)
+- Basic math utilities (lerp, clamp, approximately)
 
 
 ### Changed
