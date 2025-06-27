@@ -14,7 +14,7 @@
 pub const Vec2 = @import("vec2.zig").Vec2;
 
 pub const Vec3 = @import("vec3.zig").Vec3;
-// pub const Vec4 = @import("vec4.zig").Vec4;
+pub const Vec4 = @import("vec4.zig").Vec4;
 // pub const Mat3 = @import("mat3.zig").Mat3;
 // pub const Mat4 = @import("mat4.zig").Mat4;
 // pub const Quaternion = @import("quaternion.zig").Quaternion;
@@ -50,6 +50,8 @@ test "math module re-exports" {
     try testing.expectEqual(@as(f32, 1.0), v3.x);
     try testing.expectEqual(@as(f32, 2.0), v3.y);
     try testing.expectEqual(@as(f32, 3.0), v3.z);
+
+    _ = Vec4.init(1.0, 2.0, 3.0, 4.0);
 }
 
 test "math utilities" {
