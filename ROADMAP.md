@@ -4,8 +4,8 @@
 **Goal**: Solid math library and project structure
 
 ### Math Module
-- [ ] Vec2 - 2D vector operations
-- [ ] Vec3 - 3D vector operations  
+- [x] Vec2 - 2D vector operations
+- [x] Vec3 - 3D vector operations  
 - [ ] Vec4 - 4D vectors (for quaternion math)
 - [ ] Mat3 - 3x3 matrices (2D transforms)
 - [ ] Mat4 - 4x4 matrices (3D transforms)
