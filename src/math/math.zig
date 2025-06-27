@@ -45,7 +45,7 @@ test "math module re-exports" {
     const v2 = Vec2.init(1.0, 2.0);
     try testing.expectEqual(@as(f32, 1.0), v2.x);
     try testing.expectEqual(@as(f32, 2.0), v2.y);
-    
+
     const v3 = Vec3.init(1.0, 2.0, 3.0);
     try testing.expectEqual(@as(f32, 1.0), v3.x);
     try testing.expectEqual(@as(f32, 2.0), v3.y);

@@ -47,7 +47,7 @@ pub const Vec3 = struct {
 
     pub fn normalize(self: Vec3) Vec3 {
         const len = self.length();
-        if (len < 0.0001) {  // Avoid division by very small numbers
+        if (len < 0.0001) { // Avoid division by very small numbers
             return Vec3{ .x = 0.0, .y = 0.0, .z = 0.0 };
         }
         return self.div(len);
@@ -136,7 +136,7 @@ test "Vec3 cross product" {
 test "Vec3 length" {
     const vec = Vec3.init(3.0, 4.0, 0.0);
     try expectEqual(vec.length(), 5.0);
-    
+
     const vec2 = Vec3.init(1.0, 2.0, 2.0);
     try expectEqual(vec2.lengthSquared(), 9.0);
     try expectEqual(vec2.length(), 3.0);
@@ -149,7 +149,7 @@ test "Vec3 normalize" {
     try expectEqual(normalized.y, 0.8);
     try expectEqual(normalized.z, 0.0);
     try expectApproxEqRel(normalized.length(), 1.0, 0.0001);
-    
+
     // Test zero vector normalization
     const zero = Vec3.ZERO.normalize();
     try expectEqual(zero.x, 0.0);
@@ -162,7 +162,7 @@ test "Vec3 dot product" {
     const vec2 = Vec3.init(4.0, 5.0, 6.0);
     const result = vec1.dot(vec2);
     try expectEqual(result, 32.0); // 1*4 + 2*5 + 3*6 = 4 + 10 + 18 = 32
-    
+
     // Test perpendicular vectors (dot product should be 0)
     const perpResult = Vec3.UNIT_X.dot(Vec3.UNIT_Y);
     try expectEqual(perpResult, 0.0);
@@ -172,15 +172,15 @@ test "Vec3 constants" {
     try expectEqual(Vec3.ZERO.x, 0.0);
     try expectEqual(Vec3.ZERO.y, 0.0);
     try expectEqual(Vec3.ZERO.z, 0.0);
-    
+
     try expectEqual(Vec3.ONE.x, 1.0);
     try expectEqual(Vec3.ONE.y, 1.0);
     try expectEqual(Vec3.ONE.z, 1.0);
-    
+
     try expectEqual(Vec3.UNIT_X.x, 1.0);
     try expectEqual(Vec3.UNIT_X.y, 0.0);
     try expectEqual(Vec3.UNIT_X.z, 0.0);
-    
+
     try expectEqual(Vec3.UP.y, 1.0);
     try expectEqual(Vec3.DOWN.y, -1.0);
     try expectEqual(Vec3.FORWARD.z, -1.0);
