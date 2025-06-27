@@ -7,12 +7,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 ## [Unreleased]
 
 ### Added
-- Vec2 math operations (add, sub, mul, div, normalize, dot, perp)
+- Vec2 math operations (add, sub, mul, div, normalize, dot, perp) - 8 comprehensive tests
+- Vec3 math operations (add, sub, mul, div, cross, length, normalize, dot) - 11 comprehensive tests  
+- Vec2 and Vec3 constants (ZERO, ONE, UNIT_X/Y/Z, UP, DOWN, LEFT, RIGHT, FORWARD, BACK)
 - Basic math utilities (lerp, clamp, approximately)
-- Modular project structure with re-exports
-- Working demo program showcasing Vec2 functionality
-- Comprehensive test suite for Vec2 operations
-- Basic Vec3 math operations (add, sub, mul, div, cross product, (more to come as needed))
+- Modular project structure with seamless re-exports (`ape.math.Vec2`, `ape.math.Vec3`)
+- Enhanced demo program showcasing both Vec2 and Vec3 functionality with 3D operations
+- Comprehensive test suite with 21+ total tests passing (Vec2: 8, Vec3: 11, integration: 2+)
+- Professional build system integration (`zig build`, `zig build run`, `zig build test`)
 
 ### Changed
 - Nothing yet
